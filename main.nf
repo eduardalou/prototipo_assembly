@@ -6,6 +6,8 @@ include { HIFIASM } from './modules/hifiasm'
 
 include { GFA2FA } from './modules/gfa2fa'
 
+include { FLYE } from './modules/flye'
+
 workflow {
 
     println "Genome Prototype"
@@ -19,4 +21,6 @@ workflow {
     gfa = HIFIASM(hifi_reads)
 
     GFA2FA(gfa)
+
+    flye = FLYE(reads)
 }
