@@ -4,6 +4,8 @@ include { NANOQ } from './modules/nanoq'
 
 include { HIFIASM } from './modules/hifiasm'
 
+include { GFA2FA } from './modules/gfa2fa'
+
 workflow {
 
     println "Genome Prototype"
@@ -14,5 +16,7 @@ workflow {
 
     NANOQ(reads)
 
-    HIFIASM(hifi_reads)
+    gfa = HIFIASM(hifi_reads)
+
+    GFA2FA(gfa)
 }

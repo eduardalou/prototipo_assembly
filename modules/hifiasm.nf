@@ -11,9 +11,6 @@ process HIFIASM {
 
     output:
     path "*.bp.p_utg.gfa"
-    path "*.ec.fa.gz", optional: true
-    path "*.ovlp.paf.gz", optional: true
-    path "*.stderr.log"
 
     script:
     """
