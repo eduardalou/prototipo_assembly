@@ -1,12 +1,10 @@
 nextflow.enable.dsl=2
 
 include { NANOQ } from './modules/nanoq'
-
 include { HIFIASM } from './modules/hifiasm'
-
 include { GFA2FA } from './modules/gfa2fa'
-
 include { FLYE } from './modules/flye'
+include { RAGTAG_PATCH } from './modules/ragtag_patch'
 
 workflow {
 
@@ -20,7 +18,9 @@ workflow {
 
     gfa = HIFIASM(hifi_reads)
 
-    GFA2FA(gfa)
+    fasta = GFA2FA(gfa)
 
     flye = FLYE(reads)
+
+    RAGTAG_PATCH(flye, fasta)
 }
