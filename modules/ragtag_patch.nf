@@ -11,6 +11,7 @@ process RAGTAG_PATCH {
     path query
 
     output:
+    
     path "ragtag_output/*.patch.fasta"
     
     script:
