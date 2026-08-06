@@ -1,0 +1,24 @@
+# Nextflow
+work/
+.nextflow/
+.nextflow*
+.nextflow.log
+timeline.html
+trace.txt
+report.html
+dag.html
+
+# Resultados
+results/
+
+# Conda
+.conda/
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+
+# Arquivos temporários
+*.log
