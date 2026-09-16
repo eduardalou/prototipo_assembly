@@ -1,0 +1,16 @@
+name: prototipo_assembly
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.13
+  - openjdk
+  - nextflow=24.10.5
+  - hifiasm=0.25.0
+  - flye=2.9.6
+  - nanoq=0.10.0
+  - ragtag=2.1.0
+  - liftoff=1.6.3

@@ -6,6 +6,9 @@ include { GFA2FA } from './modules/gfa2fa'
 include { FLYE } from './modules/flye'
 include { RAGTAG_PATCH } from './modules/ragtag_patch'
 include { LIFTOFF } from './modules/liftoff'
+include { METRICS as METRICS_HIFIASM } from './modules/metrics'
+include { METRICS as METRICS_FLYE } from './modules/metrics'
+include { METRICS as METRICS_RAGTAG } from './modules/metrics'
 
 workflow {
 
@@ -30,4 +33,10 @@ workflow {
     patched = RAGTAG_PATCH(flye, fasta)
 
     LIFTOFF(patched, reference, annotation)
+
+    METRICS_HIFIASM(fasta)
+
+    METRICS_FLYE(flye)
+
+    METRICS_RAGTAG(patched)
 }
