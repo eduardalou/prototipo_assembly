@@ -1,10 +1,8 @@
 process LIFTOFF {
 
-    tag "Anotando ${assembly.simpleName}"
+    tag "Executando Liftoff"
 
     publishDir "results/liftoff", mode: "copy"
-
-    cpus 4
 
     input:
     path assembly
@@ -32,7 +30,7 @@ process LIFTOFF {
         assembly.fa \
         reference.fa \
         -g ${gff} \
-        -o liftoff.gff3 \
+        -o assembly.gff3 \
         -p ${task.cpus}
     """
 }

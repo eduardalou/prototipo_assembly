@@ -4,8 +4,6 @@ process HIFIASM {
 
     publishDir "results/hifiasm", mode: "copy"
 
-    cpus 4
-
     input:
     path reads
 
